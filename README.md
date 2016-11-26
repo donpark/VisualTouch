@@ -4,6 +4,12 @@ Makes iOS touch events visual.
 
 ![Visualized multi-touch events](screenshot.png)
 
+## Installation
+
+CocoaPods
+
+	pod 'VisualTouch', :git => 'https://github.com/donpark/VisualTouch.git'
+
 ## Integration
 
 Add `VisibleTouch.swift` to your project then replace `window` instance variable declaration in `AppDelegate.swift` file:
