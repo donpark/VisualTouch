@@ -1,6 +1,8 @@
 # VisualTouch
 
-Makes touch events visual.
+Makes iOS touch events visual.
+
+![Visualized multi-touch events](screenshot.png)
 
 ## Integration
 
