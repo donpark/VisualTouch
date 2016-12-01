@@ -2,7 +2,7 @@
 
 Makes iOS touch events visual.
 
-![Visualized multi-touch events](screenshot.png)
+<img src="demo.gif" width="200">
 
 ## Installation
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F62A7C651DE9FCF0004D6EEC /* VisualTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = F62A7C631DE9FCF0004D6EEC /* VisualTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F62A7C6C1DE9FD35004D6EEC /* VisibleTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A7C6B1DE9FD35004D6EEC /* VisibleTouch.swift */; };
+		F68490A51DF0704200265421 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68490A41DF0704200265421 /* QCMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		F62A7C631DE9FCF0004D6EEC /* VisualTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisualTouch.h; sourceTree = "<group>"; };
 		F62A7C641DE9FCF0004D6EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F62A7C6B1DE9FD35004D6EEC /* VisibleTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibleTouch.swift; sourceTree = "<group>"; };
+		F68490A41DF0704200265421 /* QCMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		F62A7C621DE9FCF0004D6EEC /* VisualTouch */ = {
 			isa = PBXGroup;
 			children = (
+				F68490A41DF0704200265421 /* QCMethod.swift */,
 				F62A7C6B1DE9FD35004D6EEC /* VisibleTouch.swift */,
 				F62A7C631DE9FCF0004D6EEC /* VisualTouch.h */,
 				F62A7C641DE9FCF0004D6EEC /* Info.plist */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62A7C6C1DE9FD35004D6EEC /* VisibleTouch.swift in Sources */,
+				F68490A51DF0704200265421 /* QCMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
