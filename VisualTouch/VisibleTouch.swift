@@ -29,12 +29,25 @@ open class VisibleTouch {
         private class TouchLayer: CAShapeLayer {
             let radius: CGFloat = UIScreen.main.scale * 12.0
             
-            func apply(touch: UITouch) {
+            override init() {
+                super.init()
+                
                 self.path = UIBezierPath(ovalIn: CGRect(x: -radius, y: -radius, width: radius * 2, height: radius * 2)).cgPath
-                self.strokeColor = UIColor.white.cgColor
                 self.fillColor = UIColor(red:0, green: 0.564, blue:0.937, alpha:1).cgColor
+                self.strokeColor = UIColor.white.cgColor
+
+                // reset to pre-animation state
+                self.reset()
+            }
+            
+            required init?(coder aDecoder: NSCoder) {
+                fatalError("init(coder:) has not been implemented")
+            }
+            
+            func reset() {
                 self.lineWidth = 0.0
                 self.opacity = 0.0
+                self.transform = CATransform3DMakeScale(2.0, 2.0, 1)
             }
         }
         
@@ -86,63 +99,55 @@ open class VisibleTouch {
                 return
             }
             
-            var newTouchLayers = self.touchLayers
             for touch in touches {
                 switch touch.phase {
                 case .began:
-                    self.addTouchLayerFor(touch: touch, touchLayers: &newTouchLayers)
+                    self.addTouchLayerFor(touch: touch)
                 case .moved:
-                    self.moveTouchLayerFor(touch: touch, touchLayers: &newTouchLayers)
+                    self.moveTouchLayerFor(touch: touch)
                 case .stationary:
-                    self.keepTouchLayerFor(touch: touch, touchLayers: &newTouchLayers)
+                    break // nothing to do
                 case .cancelled:
                     fallthrough
                 case .ended:
-                    self.removeTouchLayerFor(touch: touch, touchLayers: &newTouchLayers)
+                    self.removeTouchLayerFor(touch: touch)
                 }
             }
-            self.touchLayers = newTouchLayers
         }
         
         // MARK: TouchLayer management
         
-        private func addTouchLayerFor(touch: UITouch, touchLayers: inout TouchLayers) {
+        private func addTouchLayerFor(touch: UITouch) {
             let layer = TouchLayer()
-            layer.apply(touch: touch)
             layer.position = touch.location(in: self)
             
-            touchLayers[touch.hash] = layer
+            self.touchLayers[touch.hash] = layer
             self.insertTouchLayer(layer)
         }
         
-        private func removeTouchLayerFor(touch: UITouch, touchLayers: inout TouchLayers) {
-            guard let layer = touchLayers.removeValue(forKey: touch.hash) else {
+        private func removeTouchLayerFor(touch: UITouch) {
+            guard let layer = self.touchLayers.removeValue(forKey: touch.hash) else {
                 print("\(#function) touch layer not found")
                 return
             }
-            
             self.removeTouchLayer(layer)
         }
         
         private func removeAllTouchLayers() {
-            for (_, layer) in touchLayers {
+            for (_, layer) in self.touchLayers {
                 self.removeTouchLayer(layer)
             }
             self.touchLayers.removeAll()
         }
         
-        private func moveTouchLayerFor(touch: UITouch, touchLayers: inout TouchLayers) {
-            guard let layer = touchLayers[touch.hash] else {
+        private func moveTouchLayerFor(touch: UITouch) {
+            guard let layer = self.touchLayers[touch.hash] else {
                 return
             }
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             layer.position = touch.location(in: self)
             CATransaction.commit()
-        }
-        
-        private func keepTouchLayerFor(touch: UITouch, touchLayers: inout TouchLayers) {
-            // do nothing
         }
         
         private func insertTouchLayer(_ touchLayer: TouchLayer) {
@@ -168,7 +173,7 @@ open class VisibleTouch {
         private static func defaultTouchBeganAnimation() -> CAAnimation {
             ////Touch animation
             let touchTransformAnim            = CAKeyframeAnimation(keyPath:"transform")
-            touchTransformAnim.values         = [NSValue(caTransform3D: CATransform3DMakeScale(1.5, 1.5, 1)),
+            touchTransformAnim.values         = [NSValue(caTransform3D: CATransform3DMakeScale(2.0, 2.0, 1)),
                                                  NSValue(caTransform3D: CATransform3DMakeScale(0.75, 0.75, 1)),
                                                  NSValue(caTransform3D: CATransform3DIdentity)]
             touchTransformAnim.keyTimes       = [0, 0.5, 1]
