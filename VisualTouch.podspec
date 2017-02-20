@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'VisualTouch'
-  s.version = '1.2.0'
+  s.version = '1.2.1'
   s.license = 'MIT'
   s.summary = 'Make touch events visual'
   s.homepage = 'https://github.com/donpark/VisualTouch'
