@@ -24,11 +24,11 @@ open class VisualTouch {
         NotificationCenter.default.post(name: Event.disable, object: UIScreen.main, userInfo: nil)
     }
     
+    static var radius: CGFloat = 24.0
+
     open class Window: UIWindow {
         
         private class TouchLayer: CAShapeLayer {
-            let radius: CGFloat = UIScreen.main.scale * 12.0
-            
             override init() {
                 super.init()
                 
