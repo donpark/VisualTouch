@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F62A7C651DE9FCF0004D6EEC /* VisualTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = F62A7C631DE9FCF0004D6EEC /* VisualTouch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F62A7C6C1DE9FD35004D6EEC /* VisibleTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A7C6B1DE9FD35004D6EEC /* VisibleTouch.swift */; };
+		F62A7C6C1DE9FD35004D6EEC /* VisualTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A7C6B1DE9FD35004D6EEC /* VisualTouch.swift */; };
 		F68490A51DF0704200265421 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68490A41DF0704200265421 /* QCMethod.swift */; };
 /* End PBXBuildFile section */
 
@@ -16,7 +16,7 @@
 		F62A7C601DE9FCF0004D6EEC /* VisualTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VisualTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A7C631DE9FCF0004D6EEC /* VisualTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisualTouch.h; sourceTree = "<group>"; };
 		F62A7C641DE9FCF0004D6EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F62A7C6B1DE9FD35004D6EEC /* VisibleTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibleTouch.swift; sourceTree = "<group>"; };
+		F62A7C6B1DE9FD35004D6EEC /* VisualTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualTouch.swift; sourceTree = "<group>"; };
 		F68490A41DF0704200265421 /* QCMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				F68490A41DF0704200265421 /* QCMethod.swift */,
-				F62A7C6B1DE9FD35004D6EEC /* VisibleTouch.swift */,
+				F62A7C6B1DE9FD35004D6EEC /* VisualTouch.swift */,
 				F62A7C631DE9FCF0004D6EEC /* VisualTouch.h */,
 				F62A7C641DE9FCF0004D6EEC /* Info.plist */,
 			);
@@ -139,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F62A7C6C1DE9FD35004D6EEC /* VisibleTouch.swift in Sources */,
+				F62A7C6C1DE9FD35004D6EEC /* VisualTouch.swift in Sources */,
 				F68490A51DF0704200265421 /* QCMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +188,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -235,7 +235,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

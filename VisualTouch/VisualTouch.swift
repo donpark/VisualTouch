@@ -1,5 +1,5 @@
 //
-//  VisibleTouch.swift
+//  VisualTouch.swift
 //  Docuverse
 //
 //  Created by Don Park on 11/12/16.
@@ -9,11 +9,11 @@
 import UIKit
 import QuartzCore
 
-open class VisibleTouch {
+open class VisualTouch {
     
     private class Event {
-        static let enable = Notification.Name("VisibleTouch.enable")
-        static let disable = Notification.Name("VisibleTouch.disable")
+        static let enable = Notification.Name("VisualTouch.enable")
+        static let disable = Notification.Name("VisualTouch.disable")
     }
     
     static open func enable() {

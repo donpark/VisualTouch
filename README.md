@@ -12,20 +12,20 @@ CocoaPods
 
 ## Integration
 
-Add `VisibleTouch.swift` to your project then replace `window` instance variable declaration in `AppDelegate.swift` file:
+Add `VisualTouch.swift` to your project then replace `window` instance variable declaration in `AppDelegate.swift` file:
 
     var window: UIWindow?
     
 with:
 
-    var window: UIWindow? = VisibleTouch.Window(frame: UIScreen.main.bounds)
+    var window: UIWindow? = VisualTouch.Window(frame: UIScreen.main.bounds)
 
 ## Usage
 
-To enable visible touch:
+To make touch events visible:
 
-    VisibleTouch.enable()
+    VisualTouch.enable()
 
 To disable:
 
-    VisibleTouch.disable()
+    VisualTouch.disable()
